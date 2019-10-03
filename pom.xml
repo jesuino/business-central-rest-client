@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.fxapps</groupId>
+  <artifactId>business-central-management-client</artifactId>
+  <version>1.0</version>
+  <name>Business Central Management Client</name>
+  <description>Client to create spaces, manage projects and more</description>
+
+
+  <properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <uberfire.version>2.22.0.Final</uberfire.version>
+    <resteasy.version>4.3.0.Final</resteasy.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.uberfire</groupId>
+      <artifactId>uberfire-rest-client</artifactId>
+      <version>${uberfire.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-client-microprofile</artifactId>
+      <version>${resteasy.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-json-binding-provider</artifactId>
+      <version>${resteasy.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
