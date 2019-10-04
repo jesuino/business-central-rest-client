@@ -11,8 +11,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.guvnor.rest.client.CloneProjectJobRequest;
 import org.guvnor.rest.client.CloneProjectRequest;
 import org.guvnor.rest.client.CompileProjectRequest;
+import org.guvnor.rest.client.CreateProjectJobRequest;
 import org.guvnor.rest.client.CreateProjectRequest;
 import org.guvnor.rest.client.DeleteProjectRequest;
 import org.guvnor.rest.client.DeployProjectRequest;
@@ -37,15 +39,14 @@ public interface ProjectResource {
     @Path("/jobs/{jobId}")
     public JobResult removeJob(@PathParam("jobId") String jobId);
     
-    
     @POST
     @Path("/spaces/{spaceName}/git/clone")
-    public CloneProjectRequest cloneProject(@PathParam("spaceName") String spaceName, 
+    public CloneProjectJobRequest cloneProject(@PathParam("spaceName") String spaceName, 
                                             CloneProjectRequest cloneProjectRequest);
     
     @POST
     @Path("/spaces/{spaceName}/projects")
-    public CreateProjectRequest createProject(@PathParam("spaceName") String spaceName,
+    public CreateProjectJobRequest createProject(@PathParam("spaceName") String spaceName,
                                               CreateProjectRequest createProjectRequest);
     
     @GET
@@ -56,7 +57,6 @@ public interface ProjectResource {
     @Path("/spaces/{spaceName}/projects/{projectName}")
     public DeleteProjectRequest deleteProject(@PathParam("spaceName") String spaceName,
                                               @PathParam("projectName") String projectName);
-    
     
     @GET
     @Path("/spaces/{spaceName}/projects/{projectName}")
@@ -72,7 +72,6 @@ public interface ProjectResource {
     @Path("/spaces/{spaceName}/projects/{projectName}/maven/install")
     public InstallProjectRequest installProject(@PathParam("spaceName") String spaceName,
                                                 @PathParam("projectName") String projectName);
-    
     
     @POST
     @Path("/spaces/{spaceName}/projects/{projectName}/maven/test")
@@ -99,8 +98,5 @@ public interface ProjectResource {
     @DELETE
     @Path("/spaces/{spaceName}")
     public RemoveSpaceRequest deleteSpace(@PathParam("spaceName") String spaceName);
-    
-    
-    
     
 }
